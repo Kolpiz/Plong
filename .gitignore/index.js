@@ -5,7 +5,7 @@ client.on("ready", () => {
 });
 
 client.on("ready", () => {
-client.user.setPresence({ game: { name: ' #Pirate ou #Princess ! ', type: 0}});
+client.user.setPresence({ game: { name: ' #Pirate ou #Princesse ! ', type: 0}});
 });
 
 client.login(token)
