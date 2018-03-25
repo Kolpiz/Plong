@@ -4,6 +4,10 @@ const token = (process.env.TOKEN);
 client.on("ready", () => {
 });
 
+client.on("ready", () => {
+client.user.setPresence({ game: { name: ' /help ', type: 0}});
+});
+
 client.login(token)
 
 client.on('message', message => {
