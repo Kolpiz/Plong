@@ -12,7 +12,7 @@ client.login(token)
 
 client.on('guildMemberAdd', member => {
 
-const channel = member.guild.channels.find("name", "leave_msg").send(`{member.user} a join le discord.`)
+const channel = member.guild.channels.find("name", "leave_msg").send(`${member.user} a join le discord.`)
 });
 
 client.on('message', message => {
