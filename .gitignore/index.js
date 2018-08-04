@@ -10,7 +10,13 @@ client.user.setPresence({ game: { name: ' #Pirate ou #Princesse ! ', type: 0}});
 
 client.login(token)
 
+client.on('guildMemberAdd', member => {
+
+const channel = member.guild.channels.find("name", "accueil").send(`{member.user} a join le discord.`)
+});
+
 client.on('message', message => {
+ 
 
 var TeamPirates = client.guilds.get(message.guild.id).roles.find("name", "Team Pirates");
 var TeamPrincesses = client.guilds.get(message.guild.id).roles.find("name", "Team Princesses");
